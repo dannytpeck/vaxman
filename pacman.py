@@ -408,7 +408,7 @@ def startGame():
     c_steps = 0
 
     # Create the player paddle object
-    Pacman = Player(w, p_h, "images/Trollman.png")
+    Pacman = Player(w, p_h, "images/pacman.png")
     all_sprites_list.add(Pacman)
     pacman_collide.add(Pacman)
 

@@ -11,8 +11,8 @@ red = (255, 0, 0)
 purple = (255, 0, 255)
 yellow = (255, 255, 0)
 
-Trollicon = pygame.image.load('images/Trollman.png')
-pygame.display.set_icon(Trollicon)
+player_icon = pygame.image.load('images/pacman.png')
+pygame.display.set_icon(player_icon)
 
 # Add music
 pygame.mixer.init()
@@ -541,15 +541,15 @@ def startGame():
         screen.blit(text, [10, 10])
 
         if score == bll:
-            doNext("Congratulations, you won!", 145, all_sprites_list,
-                   block_list, monsta_list, pacman_collide, wall_list, gate)
+            do_next("Congratulations, you won!", 145, all_sprites_list,
+                    block_list, monsta_list, pacman_collide, wall_list, gate)
 
         monsta_hit_list = pygame.sprite.spritecollide(
             Pacman, monsta_list, False)
 
         if monsta_hit_list:
-            doNext("Game Over", 235, all_sprites_list, block_list,
-                   monsta_list, pacman_collide, wall_list, gate)
+            do_next("Game Over", 235, all_sprites_list, block_list,
+                    monsta_list, pacman_collide, wall_list, gate)
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
@@ -558,7 +558,7 @@ def startGame():
         clock.tick(10)
 
 
-def doNext(message, left, all_sprites_list, block_list, monsta_list, pacman_collide, wall_list, gate):
+def do_next(message, left, all_sprites_list, block_list, monsta_list, pacman_collide, wall_list, gate):
     while True:
         # ALL EVENT PROCESSING SHOULD GO BELOW THIS COMMENT
         for event in pygame.event.get():
